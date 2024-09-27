@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import  {loginFetch}  from "../../../utils/fetch";
 import "./Login.css";
 
 // eslint-disable-next-line react/prop-types
@@ -11,7 +11,7 @@ const Login = ({ setLoggedUser, setIsLoggedIn }) => {
     setter(e.target.value);
   };
 
-  const testLogin = (username, password) => {
+  const Login = (username, password) => {
     console.log("test is working");
     console.log(username, password);
     return {
@@ -23,14 +23,13 @@ const Login = ({ setLoggedUser, setIsLoggedIn }) => {
     };
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("login handleSubmit");
     // loginFetch goes here and replaces testLogin
-    const data = testLogin(username, password);
-    // setLoggedUser
-    setLoggedUser(data);
-    // setIsLoggedIn
+    const data = await loginFetch(username, password);
+    console.log(data);
+        // setLoggedUser
+        setLoggedUser(data)      // setIsLoggedIn
     setIsLoggedIn(true);
   };
 
