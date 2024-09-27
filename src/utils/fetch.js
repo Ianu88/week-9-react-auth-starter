@@ -46,7 +46,7 @@ export const loginFetch = async(username,password)=>{
         alert("There is an error. Please check your console.");
     }
   };
-  export const getallusersFetch = async(users)=>{
+  export const getallusersFetch = async()=>{
     try {
     const response = await fetch("http://localhost:5001/users/getallusers", {
     method:"GET",
