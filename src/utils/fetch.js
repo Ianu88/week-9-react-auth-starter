@@ -23,7 +23,7 @@ export const signupFetch = async(username, email, password) =>{
     }
 };
 export const loginFetch = async(username,password)=>{
-    try {
+  try {
         const response = await fetch("http://localhost:5001/users/login", {
           method:"POST",
           mode:"cors",
@@ -46,4 +46,23 @@ export const loginFetch = async(username,password)=>{
         alert("There is an error. Please check your console.");
     }
   };
-  
+  export const getallusersFetch = async(users)=>{
+    try {
+    const response = await fetch("http://localhost:5001/users/getallusers", {
+    method:"GET",
+    mode:"cors",
+    headers:{
+        "Content-Type":"application/json",
+    }
+  })
+    const data = await response.json();
+console.log("data in getalluserFetch", data);
+
+return data;
+}
+
+  catch (error) {
+  console.log(error);
+  alert("There is an error. Please check your console.");
+}
+};
