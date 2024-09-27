@@ -56,7 +56,7 @@ export const loginFetch = async(username,password)=>{
     }
   })
     const data = await response.json();
-console.log("data in getalluserFetch", users);
+console.log("data in getalluserFetch", data);
 
 return data;
 }
