@@ -32,7 +32,7 @@ const Signup = ({ setLoggedUser, setIsLoggedIn }) => {
     // loginFetch goes here and replaces testLogin
     const data = await signupFetch(username, email, password);
     
-    if (data.message=== "success"){
+    if (data.message === "success"){
       // setLoggedUser
       setLoggedUser(data);
       // setIsLoggedIn
@@ -69,5 +69,4 @@ const Signup = ({ setLoggedUser, setIsLoggedIn }) => {
     </div>
   );
 };
-
 export default Signup;
